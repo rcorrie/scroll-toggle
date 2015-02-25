@@ -30,21 +30,20 @@ foo.halt();
 ```
 ### Options
 
-scrollClass:      {string} applies passed class name to element on init
+	scrollClass:      {string} applies passed class name to element on init
 
-scrollUpClass:    {string} applies passed class name to element on upwards scroll
+	scrollUpClass:    {string} applies passed class name to element on upwards scroll
 
-scrollDownClass:  {string} applies passed class name to element on downward scroll
+	scrollDownClass:  {string} applies passed class name to element on downward scroll
 
-offset:           {integer} ignores scrolling between top margin and offset
+	offset:           {integer} ignores scrolling between top margin and offset
 
 ### Default Options
 
-scrollClass:      'scroll-toggle'
+	scrollClass:      'scroll-toggle'
 
-scrollUpClass:    'scroll-toggle-up'
+	scrollUpClass:    'scroll-toggle-up'
 
-scrollDownClass:  'scroll-toggle-down'
+	scrollDownClass:  'scroll-toggle-down'
 
-offset:           0
-
+	offset:           0
