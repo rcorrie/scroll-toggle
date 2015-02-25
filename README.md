@@ -7,25 +7,36 @@ ScrollToggle is a small JavaScript component that lets you apply classes to an e
 
 ### Use case
 ```javascript
-// To instantiate a new ScrollToggle element:
-
-var foo = new ScrollToggle('.class-name-for-element');
-
-// OR
+// instantiate a new ScrollToggle element:
 
 var foo = document.getElementById('element-id').scrollToggle();
 
-// To initialize listner:
+// Or, if you use jQuery
+
+var foo = $('#element-id').scrollToggle();
+
+// initialize listner:
 
 foo.init();
 
-// You can also pass custom options like so:
+// Or also pass custom options like so:
 
 foo.init({offset: 500});
 
-// You can halt ScrollToggle instance:
+// halt ScrollToggle instance:
 
 foo.halt();
+```
+### Callback
+You can provide a callback function to scrollToggle to override the default
+toggle function like so
+```
+var foo = $('#fixed-header').scrollToggle(function(direction, element){
+	if(direction) element.hide();
+	else element.show();
+});
+
+foo.init();
 ```
 ### Options
 
@@ -49,7 +60,7 @@ foo.halt();
 
 ## TODO
 
-* Accept callback functions
+* ~~accept callback function~~
 * ~~Package default CSS rules for plug-and-play~~
 * ~~Provide uglified JS~~
 * ~~Provide minified CSS~~
