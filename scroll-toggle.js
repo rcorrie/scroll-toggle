@@ -11,6 +11,8 @@
 *       ScrollToggle is a small JavaScript component that lets you apply classes to an
 *       element depending on which direction the document is scrolled.
 *
+*       DEMO @ http://hiyermedia.com/scroll-toggle/
+*
 *   -- Use case
 *
 *       // To instantiate a new ScrollToggle element:
