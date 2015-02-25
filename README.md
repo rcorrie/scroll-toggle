@@ -3,7 +3,7 @@ ScrollToggle is a small JavaScript component that lets you perform actions on el
 
 [DEMO](http://hiyermedia.com/scroll-toggle/)
 
-Also check out the [angular-scroll-toggle](https://github.com/rcorrie/angular-scroll-toggle)
+Also check out the [angular-scroll-toggle](https://github.com/rcorrie/angular-scroll-toggle) AngularJS directive.
 
 ## How to use
 Include the JS and CSS files.
