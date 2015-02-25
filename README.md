@@ -30,8 +30,8 @@ foo.halt();
 ### Callback
 You can provide a callback function to scrollToggle to override the default
 toggle function like so
-```
-var foo = $('#fixed-header').scrollToggle(function(direction, element){
+```javascript
+var foo = $('#element-id').scrollToggle(function(direction, element){
 	if(direction) element.hide();
 	else element.show();
 });
