@@ -3,32 +3,38 @@ ScrollToggle is a small JavaScript component that lets you perform actions on el
 
 [DEMO](http://hiyermedia.com/scroll-toggle/)
 
-## Documentation:
+Also check out the [angular-scroll-toggle](https://github.com/rcorrie/angular-scroll-toggle)
 
-### Use case
+## How to use
+Include the JS and CSS files.
+
+Instantiate a new ScrollToggle element.
+
 ```javascript
-// instantiate a new ScrollToggle element:
-
 var foo = document.getElementById('element-id').scrollToggle();
+```
 
-// Or, if you use jQuery
+Or, if you use jQuery.
 
+```javascript
 var foo = $('#element-id').scrollToggle();
+```
 
-// initialize listner:
-
+Initialize listner.
+```javascript
 foo.init();
+```
 
-// Or also pass custom options like so:
-
+Or, also pass custom options like so:
+```javascript
 foo.init({offset: 500});
+```
 
-// halt ScrollToggle instance:
-
+And halt ScrollToggle instance:
+```javascript
 foo.halt();
 ```
-### Callback
-You can provide a callback function to scrollToggle to override the default
+You can also provide a callback function to scrollToggle to override the default
 toggle function like so
 ```javascript
 var foo = $('#element-id').scrollToggle(function(direction, element){
@@ -40,23 +46,13 @@ foo.init();
 ```
 ### Options
 
-	scrollClass:      {string} applies passed class name to element on init
+*	`scrollClass`       applies passed class name to element on init
 
-	scrollUpClass:    {string} applies passed class name to element on upwards scroll
+*	`scrollUpClass`     applies passed class name to element on upwards scroll
 
-	scrollDownClass:  {string} applies passed class name to element on downward scroll
+*	`scrollDownClass`   applies passed class name to element on downward scroll
 
-	offset:           {integer} ignores scrolling between top margin and offset
-
-### Default Options
-
-	scrollClass:      'scroll-toggle'
-
-	scrollUpClass:    'scroll-toggle-up'
-
-	scrollDownClass:  'scroll-toggle-down'
-
-	offset:           0
+*	`offset`            ignores scrolling between top margin and offset
 
 ## TODO
 
