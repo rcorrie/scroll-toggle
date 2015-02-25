@@ -56,11 +56,6 @@
 *       offset:           0
 *
 *
-* TODO
-*   
-*   - Accept callback functions
-*   - Package default CSS rules for plug-and-play
-*
 */
 
 ;(function(def){

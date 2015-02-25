@@ -50,4 +50,6 @@ foo.halt();
 ## TODO
 
 * Accept callback functions
-* Package default CSS rules for plug-and-play
+* ~~Package default CSS rules for plug-and-play~~
+* ~~Provide uglified JS~~
+* ~~Provide minified CSS~~
