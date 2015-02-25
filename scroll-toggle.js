@@ -36,8 +36,8 @@
 * ### Callback
 * You can provide a callback function to scrollToggle to override the default
 * toggle function like so
-* ```
-* var foo = $('#fixed-header').scrollToggle(function(direction, element){
+* ```javascript
+* var foo = $('#element-id').scrollToggle(function(direction, element){
 * 	if(direction) element.hide();
 * 	else element.show();
 * });
@@ -66,10 +66,10 @@
 * 
 * ## TODO
 * 
-* ~~accept callback function~~
-* ~~Package default CSS rules for plug-and-play~~
-* ~~Provide uglified JS~~
-* ~~Provide minified CSS~~
+* * ~~accept callback function~~
+* * ~~Package default CSS rules for plug-and-play~~
+* * ~~Provide uglified JS~~
+* * ~~Provide minified CSS~~
 *
 *
 */
@@ -81,9 +81,11 @@
 })(function(callback){
 
   var self = this;
-  var _element = ( self.classList ? self : self[0] );
-  var _callback = callback || applyToggle;
 
+  var element = ( self.classList ? self : self[0] );
+
+  var _callback = callback || applyToggle;
+  
   var lastScrollTop = 0;
 
   var scrollOptions = {
@@ -93,8 +95,14 @@
     offset:           0
   };
 
-  // Private Methods
-
+  /**
+   * scrollListener - private
+   * 
+   * executes callback function for scroll event
+   *
+   * @param callback {function} optional callback method for scroll event
+   * @return {undefined}
+   */
   function scrollListener(callback){
     var st = document.body.scrollTop;
     var scroll = st > lastScrollTop;
@@ -102,23 +110,44 @@
     lastScrollTop = st;
   };
 
+  /**
+   * applyOptions - private
+   *
+   * applies custom options passed by initScrollToggle method
+   *
+   * @param options {object} optional options
+   * @return {undefined}
+   */
   function applyOptions(options){
     for(var key in options){
       scrollOptions[key] = options[key];
     };
   };
 
+  /**
+   * applyToggle - private
+   *
+   * toggles classes on element depending on scroll passed
+   *
+   * @param scroll {boolean} scrolling direction, true = down, false = up
+   * @return {undefined}
+   */
   function applyToggle(scroll){
-    _element.classList.remove( ( scroll ? scrollOptions.scrollUpClass : scrollOptions.scrollDownClass ) );
-    _element.classList.add( ( scroll ? scrollOptions.scrollDownClass : scrollOptions.scrollUpClass ) );
+    element.classList.remove( ( scroll ? scrollOptions.scrollUpClass : scrollOptions.scrollDownClass ) );
+    element.classList.add( ( scroll ? scrollOptions.scrollDownClass : scrollOptions.scrollUpClass ) );
   };
 
-
-  // Public Methods
-
+  /**
+   * initScrollToggle - public
+   *
+   * initializes scroll listener with options
+   *
+   * @param options {object} optional options
+   * @return {undefined}
+   */
   function initScrollToggle(options){
     applyOptions(options);
-    _element.classList.add(scrollOptions.scrollClass);
+    element.classList.add(scrollOptions.scrollClass);
     setTimeout(function(){
       window.addEventListener('scroll', function(){
         scrollListener(_callback);
@@ -126,6 +155,13 @@
     }, 500)
   };
 
+  /**
+   * haltScrollToggle - public
+   *
+   * removes scroll listener
+   *
+   * @return {undefined}
+   */
   function haltScrollToggle(){
     window.removeEventListener('scroll', scrollListener);
   };
