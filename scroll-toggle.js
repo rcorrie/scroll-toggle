@@ -63,9 +63,10 @@
   window.ScrollToggle = def;
   Object.prototype.scrollToggle = def;
 
-})(function(element){
+})(function(callback){
 
-  var _element = ( element  ? document.querySelector(element) : this );
+  var _element = ( this.classList ? this : this[0] );
+  var _callback = callback || applyToggle;
 
   var lastScrollTop = 0;
 
@@ -78,23 +79,24 @@
 
   // Private Methods
 
-  var scrollListener = function(){
+  function scrollListener(callback){
     var st = document.body.scrollTop;
     var scroll = st > lastScrollTop;
-    if(st > scrollOptions.offset) applyToggle(scroll);
+    if(st > scrollOptions.offset) callback(scroll, _element);
     lastScrollTop = st;
   };
 
-  var applyToggle = function(scroll){
-    _element.classList.remove( ( scroll ? scrollOptions.scrollUpClass : scrollOptions.scrollDownClass ) );
-    _element.classList.add( ( scroll ? scrollOptions.scrollDownClass : scrollOptions.scrollUpClass ) );
-  };
-
-  var applyOptions = function(options){
+  function applyOptions(options){
     for(var key in options){
       scrollOptions[key] = options[key];
     };
   };
+
+  function applyToggle(scroll){
+    _element.classList.remove( ( scroll ? scrollOptions.scrollUpClass : scrollOptions.scrollDownClass ) );
+    _element.classList.add( ( scroll ? scrollOptions.scrollDownClass : scrollOptions.scrollUpClass ) );
+  };
+
 
   // Public Methods
 
@@ -102,7 +104,9 @@
     applyOptions(options);
     _element.classList.add(scrollOptions.scrollClass);
     setTimeout(function(){
-      window.addEventListener('scroll', scrollListener);
+      window.addEventListener('scroll', function(){
+        scrollListener(_callback);
+      });
     }, 500)
   };
 
