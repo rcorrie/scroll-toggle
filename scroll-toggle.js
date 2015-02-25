@@ -1,7 +1,7 @@
 /**
 *
-* Author:      Ricardo Corrie <https://github.com/rcorrie
-* version:     scroll-toggle 0.0.1
+* Author:      Ricardo Corrie <https://github.com/rcorrie>
+* Version:     scroll-toggle 0.0.1
 * Modified:    Ricardo Corrie, 02/25/2015
 *
 * Documentation:
