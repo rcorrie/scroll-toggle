@@ -13,7 +13,7 @@ var foo = new ScrollToggle('.class-name-for-element');
 
 // OR
 
-var foo = new document.getElementById('element-id').ScrollToggle();
+var foo = document.getElementById('element-id').scrollToggle();
 
 // To initialize listner:
 
