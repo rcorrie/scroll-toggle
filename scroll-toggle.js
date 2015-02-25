@@ -21,7 +21,7 @@
 *
 *       // OR
 *
-*       var foo = document.getElementById('element-id').ScrollToggle();
+*       var foo = document.getElementById('element-id').scrollToggle();
 *
 *       // To initialize listner:
 *
