@@ -38,8 +38,8 @@ You can also provide a callback function to scrollToggle to override the default
 toggle function like so
 ```javascript
 var foo = $('#element-id').scrollToggle(function(direction, element){
-	if(direction) element.hide();
-	else element.show();
+	if(direction) element.html('Scrolling Down');
+	else element.html('Scrolling Up');
 });
 
 foo.init();
