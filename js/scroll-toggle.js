@@ -148,7 +148,7 @@
       window.addEventListener('scroll', function(){
         scrollListener(_callback);
       });
-    }, 500)
+    }, 500);
   };
 
   /**
