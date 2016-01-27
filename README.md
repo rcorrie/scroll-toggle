@@ -60,3 +60,4 @@ foo.init();
 * ~~Package default CSS rules for plug-and-play~~
 * ~~Provide uglified JS~~
 * ~~Provide minified CSS~~
+* Add timeout option
